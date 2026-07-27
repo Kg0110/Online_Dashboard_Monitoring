@@ -1,0 +1,40 @@
+/.venv
+/.venv-1
+/.venv-2
+/AHBC-300SS.py
+/Automation.BDaq4.Design.dll
+/Automation.BDaq4.dll
+/CurrentComparison_20260717_085844.png
+/Current_Comparison.py
+/current_monitor.db
+/DATA_Current.py
+/distiguish tool.py
+/DI_INTEGRATION.py
+/from fastapi import FastAPI.py
+/import keyboard.txt
+/import sys.py
+/import-sys.py
+/importsys.py
+/interval.py
+/net.py
+/no_DI.py
+/no_DIrevise.py
+/No_startstop.py
+/On_Off.py
+/Per_tool_Current.py
+/reviseOn_Off.py
+/SCANNER.py
+/Set_limit_integration.py
+/THRESHOLD START.py
+/ToolComparison_20260717_093752.png
+/ToolComparison_20260717_094449.png
+/ToolComparison_20260717_094657.png
+/Tool_1_Data_20260717_094419.csv
+/Tool_1_Data_20260717_094622.csv
+/Tool_2_Data_20260717_094425.csv
+/Tool_2_Data_20260717_094637.csv
+/Tool_3_Data_20260717_094440.csv
+/Tool_3_Data_20260717_094648.csv
+/Tool_4_Data_20260717_094449.csv
+/Tool_4_Data_20260717_094657.csv
+/__pycache__
