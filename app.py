@@ -1,7 +1,6 @@
 import os
 import glob
 import time
-import requests
 import pandas as pd
 import numpy as np
 import plotly.graph_objects as go
@@ -85,7 +84,7 @@ st.sidebar.title("⚡ Control Panel")
 
 data_source = st.sidebar.radio(
     "Select Data Source:",
-    ("Local DAQ CSV Auto-Sync", "Base44 REST API", "Live Demo Simulation")
+    ("Local DAQ CSV Auto-Sync", "Live Demo Simulation")
 )
 
 auto_refresh = st.sidebar.checkbox("Enable Real-Time Auto Refresh", value=True)
@@ -112,24 +111,6 @@ if data_source == "Local DAQ CSV Auto-Sync":
             st.sidebar.error(f"Error reading local CSV: {e}")
     else:
         st.sidebar.warning("No DAQ CSV continuous logs found on Desktop.")
-
-elif data_source == "Base44 REST API":
-    api_url = st.sidebar.text_input("Base44 Endpoint URL", "https://6a61e3592c43b1b22b85994f.base44.app/api/entities/CurrentReading")
-    api_key = st.sidebar.text_input("Base44 API Key", type="password")
-    
-    if api_key:
-        headers = {"Authorization": f"Bearer {api_key}"}
-        try:
-            resp = requests.get(api_url, headers=headers, timeout=3.0)
-            if resp.status_code == 200:
-                data = resp.json()
-                df = pd.DataFrame(data if isinstance(data, list) else data.get("data", []))
-            else:
-                st.sidebar.error(f"API Error {resp.status_code}")
-        except Exception as e:
-            st.sidebar.error(f"API Connection Failed: {e}")
-    else:
-        st.sidebar.info("Enter your Base44 API Key to start polling.")
 
 elif data_source == "Live Demo Simulation":
     # Generate 50 simulated continuous data points
